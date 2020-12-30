@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1>Buddy</h1>
+<title>My Dude</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+<body>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Notes</a>
+            <form class="form-inline">
+    
+                <button class="btn btn-outline-success my-2 my-sm-0" id="my_button">Save</button>
+                <button class="btn btn-outline-success my-2 my-sm-0">Delete</button>
+            </form>
+        </nav>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Saved Notes</h5>
+                        <div id="my_div"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Note</h5>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1"></label>
+                            <input type="Title" class="form-control" id="name" placeholder="Your Title">
+                        </div>
+                        <div id="input" class="form-group">
+                            <label for="exampleFormControlTextarea1"></label>
+                            <textarea class="form-control" id="name" placeholder="Your note" rows="15"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- <div class="container">
+        <div class="column-center">
+          <form>
+            <div class="form-group">
+              <h1>Burgers</h1>
+              <h2>Add A Burger Here</h2>
+              <label for="">Burgers Name:</label>
+               id set for input field to be called later 
+              <input id="name" class="form-control" type="text" placeholder="Burger Name Here:">
+            </div>
+      
+            <div class="form-group text-center">
+               button set with id to be called later 
+              <button id="my_button" class="btn btn-outline-success btn-lg" type="button">
+                Add Burger
+              </button>
+            </div>
+          </form>
+        </div>
+      
+      
+        <div class="column-left">
+          <h3>List of Burgers to Eat</h3>
+           div set with id to have data appended 
+          <div id="my_div"></div>
+      
+      
+      
+        </div>
+      
+        <div class="column-right">
+           div set with id to have data that was appended to be appended to 
+          <h3>List of Burgers Eaten</h3>
+          <div id="deleted">
+        </div>
+      </div> -->
+      
+      
+      <!-- setting div_name and data  -->
+      <script>function append_to_div(div_name, data) {
+          document.getElementById(div_name).innerText += data;
+        }
+    //   {{!-- calling button to be called on click --}}
+        document.getElementById("my_button")
+          .addEventListener('click', function () {
+    //   {{!-- grabbing data from the input field --}}
+            var user_name = document.getElementById("name");
+            var value = user_name.value.trim();
+           
+            if (!value)
+              alert("Name Cannot be empty!");
+            else
+            // {{!-- appending data to div we set id to --}}
+              append_to_div("my_div", value + "\n");
+      
+            user_name.value = "";
+            // {{!-- calling data from my_div and creating a button id set to delet --}}
+             var div = document.getElementById("my_div");
+            var button = document.createElement("button");
+            button.id = "delete"
+            button.innerHTML = "Delete Burger";
+            div.appendChild(button);
+          });
+      
+    //   {{!-- calling data from my_div and appending to seperate div --}}
+    //   function append_to_div(div_name, data){ 
+    //               document.getElementById(div_name).innerText += data; 
+    //           } 
+                
+    //           document.getElementById("delete") 
+    //                   .addEventListener('click', function() { 
+                    
+    //               var data = document.getElementById("my_div");  
+    //                   append_to_div("deleted"); 
+                    
+                  
+    //           }); 
+                 
+      </script>
+</body>
+</html>
